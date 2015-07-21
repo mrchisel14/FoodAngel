@@ -287,6 +287,7 @@ public abstract class CaptureActivity extends Activity implements SurfaceHolder.
 
   @Override
   protected void onPause() {
+    Log.d("Scanner", "OnPause");
     if (handler != null) {
       handler.quitSynchronously();
       handler = null;
@@ -295,7 +296,7 @@ public abstract class CaptureActivity extends Activity implements SurfaceHolder.
     ambientLightManager.stop();
     beepManager.close();
     cameraManager.closeDriver();
-    //historyManager = null; // Keep for onActivityResult
+    historyManager = null; // Keep for onActivityResult
     if (!hasSurface) {
       SurfaceView surfaceView = (SurfaceView) findViewById(R.id.preview_view);
       SurfaceHolder surfaceHolder = surfaceView.getHolder();
@@ -604,7 +605,7 @@ public abstract class CaptureActivity extends Activity implements SurfaceHolder.
 
   // Briefly show the contents of the barcode, then handle the result outside Barcode Scanner.
   private void handleDecodeExternally(Result rawResult, ResultHandler resultHandler, Bitmap barcode) {
-
+  Log.d("Scanner", "Handle decode externally");
     if (barcode != null) {
       viewfinderView.drawResultBitmap(barcode);
     }

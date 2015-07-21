@@ -11,11 +11,13 @@ public class Util {
         String name;
         Date date;
         int quantity;
+        int lastDaysTillExpiration;
         ProductData(){
             barcode = "";
             name = "";
             date = null;
             quantity = 0;
+            lastDaysTillExpiration = 0;
         }
     }
 }
