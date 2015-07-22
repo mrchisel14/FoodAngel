@@ -287,7 +287,6 @@ public abstract class CaptureActivity extends Activity implements SurfaceHolder.
 
   @Override
   protected void onPause() {
-    Log.d("Scanner", "OnPause");
     if (handler != null) {
       handler.quitSynchronously();
       handler = null;
