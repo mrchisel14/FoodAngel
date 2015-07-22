@@ -19,7 +19,7 @@ public class PantryActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantry);
 
-        dbControl = new DatabaseControl(this, "FA", null, 3);
+        dbControl = new DatabaseControl(this, "FA", null, 7);
 
         // dbControl.insertNewProduct("0000000", "Test Food", new Date(2015, 5, 17), 1);
         // dbControl.insertNewProduct("0000000", "Test Food", new Date(2015, 5, 17), 1);
@@ -46,8 +46,11 @@ public class PantryActivity extends Activity {
                 Date date = new Date(c.getInt(3));
                 pantry.setFields(c.getString(2), date, c.getInt(4));
             } while (c.moveToNext());
+        } else {
+            // No items in pantry, display message
         }
 
         c.close();
+        dbControl.close();
     }
 }
