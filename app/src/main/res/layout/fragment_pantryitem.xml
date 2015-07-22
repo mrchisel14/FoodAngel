@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_marginBottom="3dp"
+    android:weightSum="1"
+    android:background="#858585">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name:"
+        android:id="@+id/item_name"
+        android:textColor="#DCDCDC"
+        android:textSize="25sp"
+        android:gravity="right" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X"
+        android:id="@+id/button"
+        android:textColor="#7A1F00"
+        android:textSize="30sp"
+        android:background="@android:color/transparent"
+        android:layout_gravity="right|top" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Expiration Date:"
+        android:id="@+id/expire_date"
+        android:textColor="#DCDCDC"
+        android:textSize="25sp"
+        android:layout_gravity="left|center_vertical" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quantity:"
+        android:id="@+id/quantity"
+        android:textColor="#DCDCDC"
+        android:textSize="25sp"
+        android:gravity="right"
+        android:layout_gravity="left|bottom" />
+
+</FrameLayout>
