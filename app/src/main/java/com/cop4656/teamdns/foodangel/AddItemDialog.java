@@ -13,23 +13,44 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+import io.github.johncipponeri.outpanapi.OutpanAPI;
+import io.github.johncipponeri.outpanapi.OutpanObject;
+
 /**
  * Created by Shawn on 7/16/2015.
  */
 public class AddItemDialog extends Dialog {
-    public int month = 0, day = 0, year = 0; //expiration date
-    DateFormat df;
-    Date date;
-    ScannerActivity activity;
 
-    AddItemDialog(Context context){
+    DateFormat df;
+    public Util.ProductData data;
+    ScannerActivity activity;
+    private final String outpan_api_key = "f70d071b91ee72dab3c524dc8abe5517";
+    OutpanObject outpanData;
+    boolean found = false;
+
+    AddItemDialog(Context context, ScannerActivity s, String bcode){
         super(context);
         setContentView(R.layout.add_item);
-        TextView tv = (TextView)findViewById(R.id.date);
+        activity = s;
+        data = retrieveData(bcode);//searches for barcode in databases
+        TextView tv;
+        if(data == null){
+            data = new Util.ProductData();
+            data.barcode = bcode;
+        }
+        if(data.name != null){
+            //Barcode was found in database populate appropriate fields
+            EditText et = (EditText)findViewById(R.id.name);
+            et.setText(data.name);
+            tv = (TextView)findViewById(R.id.current_quantity);
+            tv.setText(String.format("%d", data.quantity));
+        }
+        tv = (TextView)findViewById(R.id.date);
         df = new SimpleDateFormat("MM/dd/yyyy");
-        if(date == null) date = new Date();
-        tv.setText(df.format(date));
-
+        if(data.expDate == null) data.expDate = new Date();
+        tv.setText(df.format(data.expDate));
+        tv = (TextView)findViewById(R.id.barcode);
+        tv.setText(data.barcode);
         tv = (TextView)findViewById(R.id.date_change);
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,27 +67,13 @@ public class AddItemDialog extends Dialog {
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView barcode = (TextView) findViewById(R.id.barcode);
+                TextView barcodeView = (TextView) findViewById(R.id.barcode);
                 EditText name = (EditText) findViewById(R.id.name);
                 EditText quantity = (EditText) findViewById(R.id.quantity);
-                storeData(barcode.getText().toString(), name.getText().toString(), quantity.getText().toString());
+                storeData(barcodeView.getText().toString(), name.getText().toString(), quantity.getText().toString());
                 dismiss();
             }
         });
-    }
-    AddItemDialog(Context context, ScannerActivity s){
-        this(context);
-        activity = s;
-        TextView tv = (TextView)findViewById(R.id.barcode);
-        tv.setText(activity.data.barcode);
-        if(activity.data.name != null){
-            //Barcode was found in database populate appropriate fields
-            EditText et = (EditText)findViewById(R.id.name);
-            et.setText(activity.data.name);
-            tv = (TextView)findViewById(R.id.current_quantity);
-            tv.setText(String.format("%d", activity.data.quantity));
-            date = activity.data.date;//added to the UI in default constructor
-        }
     }
     @Override
     protected void onStop(){
@@ -81,30 +88,80 @@ public class AddItemDialog extends Dialog {
     }
     private void storeData(String barcode, String name, String quantity){
         //store data to database
-        Calendar selectedDate = Calendar.getInstance();
-        if(activity == null) return;
-        if(year != 0 && day != 0 && month != 0) //get date from date picker selection
-            selectedDate.setTime(new Date(year, month, day));
-        else if(activity.data.date != null)//get date from activity object if was found in database
-            selectedDate.setTime(activity.data.date);
+        Date selectedDate;
+        if(data.expDate != null)//get expDate if was found in database
+            selectedDate = data.expDate;
+        else selectedDate = new Date();
 
-        //store form data in activity.data
-        activity.data.barcode = barcode;
-        activity.data.name = name;
-        activity.data.date = selectedDate.getTime();
-        activity.data.quantity = Integer.parseInt(quantity);
-        if(activity.data.lastDaysTillExpiration == 0){
-            //calculate days until food expires
-            activity.data.lastDaysTillExpiration = daysBetween(Calendar.getInstance(), selectedDate);
-        }
-        //activity.data object now contains all data needed to store in database.
-        Log.d("Scanner", "Storing data: " + activity.data.barcode + " " + activity.data.name + " "
-                + activity.data.date + " " + activity.data.quantity);
+        //store form data in data
+        data.barcode = barcode;
+        data.name = name;
+        if(data.expDate == null) data.expDate = selectedDate;
+        data.quantity = Integer.parseInt(quantity);
+        //data object now contains all data needed to store in database.
+        Log.d("Scanner", "Storing data: " + data.barcode + " " + data.name + " "
+                + data.expDate + " " + data.quantity);
     }
     //method below copied from http://stackoverflow.com/questions/6185966/converting-a-date-object-to-a-calendar-object
-    public static int daysBetween(Calendar startDate, Calendar endDate) {
-        long end = endDate.getTimeInMillis();
-        long start = startDate.getTimeInMillis();
+    public static int daysBetween(Date startDate, Date endDate) {
+        long end = endDate.getTime();
+        long start = startDate.getTime();
         return (int) TimeUnit.MILLISECONDS.toDays(Math.abs(end - start));
+    }
+    private Util.ProductData retrieveData(final String bcode){
+        //search for barcode in database if not found return object only containing barcode
+        Util.ProductData rdata;
+        DatabaseControl dbControl = new DatabaseControl(activity, "FA", null, 7);
+        //Search embedded database and fill rdata object if found
+        rdata = dbControl.retrieveProduct(bcode);
+        if(rdata != null ) found = true;
+        else{
+            rdata = new Util.ProductData();
+            rdata.barcode = bcode;
+        }
+        if(found){
+            Log.d("Scanner", "Found in Embedded Database");
+            //int daysTillExpiration = AddItemDialog.daysBetween(rdata.entryDate, rdata.expDate);
+            Calendar c = Calendar.getInstance();//used to calculate today's expDate + last expiration time
+            //c.add(Calendar.DATE, daysTillExpiration);
+            rdata.expDate = c.getTime();
+        }
+        //Search online database
+        if(!found){
+            Log.d("Scanner", "Not found in embedded database trying online");
+            final OutpanAPI api = new OutpanAPI(outpan_api_key);
+            Thread searchThread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    Log.d("Scanner", "Searching online database");
+                    try{
+                        outpanData = api.getProductName(bcode);
+                        if(outpanData.name == null){
+                            found = false;
+                        } else found = true;
+                    }catch(Exception e){
+                        e.printStackTrace();
+                        found = false;
+                    }
+                }
+            });
+            searchThread.start();
+            try{
+                searchThread.join();
+            }catch (InterruptedException e){
+                Log.e("Scanner", e.getMessage());
+                e.printStackTrace();
+            }
+            if(found){
+                rdata.name = outpanData.name;
+                rdata.quantity = 0;
+                rdata.expDate = new Date(); // sets the expDate to the current time
+                found = true;
+                Log.d("Scanner", "Found in Online Database");
+            }
+        }
+        found = false;
+        Log.d("Scanner", "Leaving Retrieve Data");
+        return rdata;
     }
 }

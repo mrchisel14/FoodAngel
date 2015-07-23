@@ -9,15 +9,13 @@ public class Util {
     public static class ProductData{
         String barcode;
         String name;
-        Date date;
+        Date entryDate, expDate;
         int quantity;
-        int lastDaysTillExpiration;
         ProductData(){
             barcode = "";
             name = "";
-            date = null;
+            expDate = entryDate = null;
             quantity = 0;
-            lastDaysTillExpiration = 0;
         }
     }
 }

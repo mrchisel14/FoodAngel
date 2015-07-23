@@ -39,6 +39,20 @@ public class DatabaseControl extends SQLiteOpenHelper {
     public Cursor selectProducts() {
         return _readDb.rawQuery("SELECT * FROM FoodAngel;", null);
     }
+    public Util.ProductData retrieveProduct(String barcode){
+        Util.ProductData data = new Util.ProductData();
+        Cursor c = _readDb.rawQuery("SELECT * FROM FoodAngel WHERE Barcode == " + barcode + ";", null);
+        if(c.moveToFirst()){
+            data.barcode = c.getString(1);
+            data.name = c.getString(2);
+            data.expDate = new Date(c.getInt(3));
+            data.quantity = c.getInt(4);
+        }
+        else{
+            data = null;
+        }
+        return data;
+    }
 
     public void insertInstanceId(String instanceId) {
         _writeDb.execSQL("INSERT INTO GCM(InstanceId)" +
