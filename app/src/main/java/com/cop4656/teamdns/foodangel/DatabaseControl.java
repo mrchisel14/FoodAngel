@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import java.util.Date;
 
@@ -12,9 +13,11 @@ public class DatabaseControl extends SQLiteOpenHelper {
 
     private final SQLiteDatabase _writeDb = this.getWritableDatabase();
     private final SQLiteDatabase _readDb = this.getReadableDatabase();
+    private Context context;
 
     public DatabaseControl(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
+        this.context = context;
     }
 
     @Override
@@ -40,16 +43,23 @@ public class DatabaseControl extends SQLiteOpenHelper {
         return _readDb.rawQuery("SELECT * FROM FoodAngel;", null);
     }
     public Util.ProductData retrieveProduct(String barcode){
-        Util.ProductData data = new Util.ProductData();
-        Cursor c = _readDb.rawQuery("SELECT * FROM FoodAngel WHERE Barcode == " + barcode + ";", null);
-        if(c.moveToFirst()){
-            data.barcode = c.getString(1);
-            data.name = c.getString(2);
-            data.expDate = new Date(c.getInt(3));
-            data.quantity = c.getInt(4);
-        }
-        else{
-            data = null;
+        Util.ProductData data = null;
+        if(barcode == null) return null;
+        try {
+            Cursor c = _readDb.rawQuery("SELECT * FROM FoodAngel WHERE Barcode == " + barcode + ";", null);
+            if(c.moveToFirst()){
+                data.barcode = c.getString(1);
+                data.name = c.getString(2);
+                data.expDate = new Date(c.getInt(3));
+                data.quantity = c.getInt(4);
+                data.entryDate = new Date(c.getInt(5));
+            }
+            else{
+                data = null;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            Toast.makeText(context, "Unable to search barcode", Toast.LENGTH_SHORT);
         }
         return data;
     }
