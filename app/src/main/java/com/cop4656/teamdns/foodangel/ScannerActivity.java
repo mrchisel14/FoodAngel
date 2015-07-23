@@ -1,11 +1,16 @@
 package com.cop4656.teamdns.foodangel;
 
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
+
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.zxing.Result;
 import com.google.zxing.client.android.CaptureActivity;
 import com.google.zxing.client.android.result.ResultHandler;
@@ -19,25 +24,28 @@ import io.github.johncipponeri.outpanapi.OutpanObject;
 
 public class ScannerActivity extends CaptureActivity {
     static FragmentManager fm;
-    ImageButton pantryButton;
     public Util.ProductData data = new Util.ProductData();
     private final String outpan_api_key = "f70d071b91ee72dab3c524dc8abe5517";
     OutpanObject outpanData;
     boolean found = false;
+    final int RQS_GooglePlayServices = 1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         Log.d("Scanner", "OnCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scanner);
-        pantryButton = (ImageButton)findViewById(R.id.Pantry_Button);
         fm = getFragmentManager();
-        pantryButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("Scanner", "Going to Pantry Activity");
-            }
-        });
+        /* Checks if device has Google Play Services activated */
+        int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getApplicationContext());
+
+        if (resultCode == ConnectionResult.SUCCESS) {
+            Toast.makeText(getApplicationContext(),
+                    "isGooglePlayServicesAvailable SUCCESS",
+                    Toast.LENGTH_LONG).show();
+        } else
+            GooglePlayServicesUtil.getErrorDialog(resultCode, this, RQS_GooglePlayServices).show();
+        /* --- */
     }
     @Override
     public void handleDecodeInternally(Result rawResult, ResultHandler resultHandler, Bitmap barcode) {
@@ -99,5 +107,9 @@ public class ScannerActivity extends CaptureActivity {
         found = false;
         Log.d("Scanner", "Leaving Retrieve Data");
         return rdata;
+    }
+    public void SwitchActivity(View view) {
+        Intent i = new Intent(this, PantryActivity.class);
+        startActivity(i);
     }
 }
