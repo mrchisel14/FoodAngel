@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/jars/libs/internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ba3df4eb0a630d7de294f0e48d3f9267d279b784">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-361c8b0e593d2a33f7c2e585c47ccc65899daa91.jar" />
+    </item>
+    <item
+        jar="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/exploded-aar/FoodAngel.libraries/Zxing/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8269a42679739434a310941a3523637bac575e6c">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/classes-5eba2edbbb0acf544c61fb46026d9e042f6a4bc5.jar" />
+    </item>
+    <item
+        jar="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f02127a85abd52a2cd526d4c2409f21969f80ee8">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/classes-7e510795db62912209c1e8b69c717bf70dcda2bc.jar" />
+    </item>
+    <item
+        jar="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/classes-81f1df39e95ff9b72ddc0826ad383a5067e8637c.jar" />
+    </item>
+    <item
+        jar="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8d736fefa22d896e84a268354b3ed48a42663150">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/classes-75d0e65a1c2062bb34582611d53ca2b44467b714.jar" />
+    </item>
+    <item
+        jar="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="68c140702c7242d914655bcb3164d9e8c45b84cb">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/classes-db46394f9daa1825de831eb4e6224b11238b749f.jar" />
+    </item>
+    <item
+        jar="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6440e5e5cfe368f9bff3c537fb8988048069cb33">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/classes-f5f8e85aa95e41ee9428974dd32dad0b99691969.jar" />
+    </item>
+    <item
+        jar="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a172852a35ff919e85b9b7f14bbc15c5bee25520">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/classes-af98028f0d13c50646ae626e1681c626585c110a.jar" />
+    </item>
+    <item
+        jar="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/classes-60d29c655acafd59a7832ddf384275a81aa41538.jar" />
+    </item>
+    <item
+        jar="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1a6411087ab88ce5542f593e63a2752b6b0d6f1a">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/classes-ec705fa6747c6142c183e850378f10ec50ff4b09.jar" />
+    </item>
+    <item
+        jar="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8e3a972f28b8bae817e382257ba177a31bcadbbc">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/classes-0e9182f59d0a11d6141a81215297cf3fcf79b33a.jar" />
+    </item>
+    <item
+        jar="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/exploded-aar/FoodAngel.libraries/Zxing/unspecified/jars/libs/core-3.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e019d15a13a9786f881141d2df6654b8510bce8b">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/core-3.2.0-277d29a58accdca4c625d759165ed783d10f88a2.jar" />
+    </item>
+    <item
+        jar="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e7b35244f50663b3f8d150714bca9ecd7a290da1">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/classes-421c8f4f002112d5f41cec325b5d10c0e7cfb4c6.jar" />
+    </item>
+    <item
+        jar="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d405025c600055237c171a0bbabaa49d69696573">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/classes-f71fa3d98a030432b928f3df24efd3bc4b756f83.jar" />
+    </item>
+    <item
+        jar="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a1372c17fccacca753d3951d3ad820571cbce075">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/classes-21e30582eb15dd5eec23b8ee8f1c5c26ae89fdaa.jar" />
+    </item>
+    <item
+        jar="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="272bc5d7063f24bc3a33ea1d318cde8f31f5ec4c">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/classes-a649f8b6ce751489efb16e1c388cc8a5ecac74be.jar" />
+    </item>
+    <item
+        jar="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f44d03c138cb6488fdbaa65e3a7e5878861a56d8">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/classes-76f0bb50d63f52d7076bd78a676918ff6f3f4c46.jar" />
+    </item>
+    <item
+        jar="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/libs/outpan-api-java-1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="29ece57a1ffd6e2e50d29c13633817e732ac8137">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/outpan-api-java-1.1-906cde8592c3d5a14be155a9c43ae392f300a6d2.jar" />
+    </item>
+    <item
+        jar="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1e98ef3f124bb7a11f8575f9ff5dfea330b61b6f">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/classes-8a2f728dbcf12b6a486326a83a286b5e276d81df.jar" />
+    </item>
+    <item
+        jar="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6836d188602ec5382d1967c58b00960eb8ff8773">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/classes-6fd0a48fa531cb3e2fe1f28c60dbe82832917a04.jar" />
+    </item>
+    <item
+        jar="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-a34e9cc7c1a5e2b6fdb1761e6303e2eeb39f6502.jar" />
+    </item>
+    <item
+        jar="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="02bac2dc792d78241077861566f2c82da955e7fa">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/classes-79c3c8dfcd3159eb3edf5fc1304a44394276f66b.jar" />
+    </item>
+    <item
+        jar="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a78183f30e769a98ab4820794f597763088d3065">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/classes-0cfdbbfddf319930ea1982036d3bc8ec0331f0f7.jar" />
+    </item>
+    <item
+        jar="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/exploded-aar/FoodAngel.libraries/Zxing/unspecified/jars/libs/android-core-3.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="222b58541c79971b53cca8ed4a40cf251f1630df">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/android-core-3.2.0-255af93b97e7f0328e601636cc491ed24008c0d6.jar" />
+    </item>
+    <item
+        jar="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ba207be21987c11b37d9f8faa08ed6e722569f30">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/classes-c159f1276df4a5750ed1e0605f72d648a04020ee.jar" />
+    </item>
+    <item
+        jar="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="06a42becc33232ec0ee125161da68c1829c9f8fd">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/classes-198587cd195d01cdf14a38d162dff899c4bdefc7.jar" />
+    </item>
+    <item
+        jar="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="29ebc7e04d877062317c8cc0e68b20f0c1fcda66">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/classes-695b2bf326f10f89b0d5bccd5dab5b0b5fd13136.jar" />
+    </item>
+    <item
+        jar="/Users/ricardo/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-1122cca49405c401f52ea96ba8402509b5f15c16.jar" />
+    </item>
+    <item
+        jar="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="69dd177337ead693c408c8dddc9546bb6f1244fa">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/classes-1e982f807e9580de8726d48c3d60c0fd67f88cfa.jar" />
+    </item>
+    <item
+        jar="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="63ec6e9f4fe5482a7447d0f3091b8e543a02554c">
+        <dex dex="/Users/ricardo/AndroidStudioProjects/Food Angel Final/FoodAngel/app/build/intermediates/pre-dexed/debug/classes-e598392e30ebc084eb8a3113912526c37ef9c593.jar" />
+    </item>
+
+</items>

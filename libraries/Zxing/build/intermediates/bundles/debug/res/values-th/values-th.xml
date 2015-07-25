@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/Shawn/COP4656/FoodAngel/libraries/Zxing/src/main/res/values-th/strings.xml -->
+    <!-- From: file:/Users/ricardo/AndroidStudioProjects/Food%20Angel%20Final/FoodAngel/libraries/Zxing/src/main/res/values-th/strings.xml -->
     <eat-comment/>
     <string name="app_name">Barcode Scanner</string>
     <string name="app_picker_name">แอพพลิเคชั่น</string>
