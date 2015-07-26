@@ -5,10 +5,8 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.LinearLayout;
 
-import java.util.Date;
+import java.util.Calendar;
 
 public class PantryActivity extends Activity {
 
@@ -43,8 +41,10 @@ public class PantryActivity extends Activity {
                 trans.commit();
 
                 // Grab the necessary fields from this row
-                Date date = new Date(c.getInt(3));
-                pantry.setFields(c.getString(2), date, c.getInt(4));
+                Calendar cal = Calendar.getInstance();
+                cal.setTimeInMillis(c.getLong(3));
+                //Date date = new Date();
+                pantry.setFields(c.getString(2), cal, c.getInt(4));
             } while (c.moveToNext());
         } else {
             // No items in pantry, display message

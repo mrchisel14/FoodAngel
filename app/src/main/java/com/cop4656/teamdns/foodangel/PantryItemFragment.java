@@ -1,16 +1,13 @@
 package com.cop4656.teamdns.foodangel;
 
 import android.app.Fragment;
-import android.content.ClipData;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import java.util.Date;
+import java.util.Calendar;
 
 public class PantryItemFragment extends Fragment {
 
@@ -47,13 +44,12 @@ public class PantryItemFragment extends Fragment {
         return currentItem;
     }
 
-    public void setFields(String name, Date expire, int quantity) {
+    public void setFields(String name, Calendar expire, int quantity) {
         if (name != null)
             itemNameText = "Name: " + name.trim();
 
-        if (expire != null)
-            expireDateText = "Expiration Date: " + expire.getMonth() + "/" + expire.getDay() + "/" + expire.getYear();
-
+        if (expire != null)//Calendar.Month is + 1 because Months are zero based.
+            expireDateText = "Expiration Date: " + (expire.get(Calendar.MONTH)+1) + "/" + expire.get(Calendar.DAY_OF_MONTH) + "/" + expire.get(Calendar.YEAR);
         quantityText = "Quantity: " + quantity;
     }
 }

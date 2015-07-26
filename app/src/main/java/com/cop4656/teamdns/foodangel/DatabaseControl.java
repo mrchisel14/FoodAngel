@@ -44,19 +44,21 @@ public class DatabaseControl extends SQLiteOpenHelper {
     }
     public Util.ProductData retrieveProduct(String barcode){
         Util.ProductData data = null;
-        if(barcode == null) return null;
+        if(barcode == null)return null;
         try {
-            Cursor c = _readDb.rawQuery("SELECT * FROM FoodAngel WHERE Barcode == " + barcode + ";", null);
+            Cursor c = _readDb.rawQuery("SELECT * FROM FoodAngel WHERE Barcode=\'" + barcode + "\';", null);
             if(c.moveToFirst()){
+                data = new Util.ProductData();
                 data.barcode = c.getString(1);
                 data.name = c.getString(2);
-                data.expDate = new Date(c.getInt(3));
+                data.expDate = new Date(c.getLong(3));
                 data.quantity = c.getInt(4);
-                data.entryDate = new Date(c.getInt(5));
+                data.entryDate = new Date(c.getLong(5));
             }
             else{
                 data = null;
             }
+            c.close();
         }catch (Exception e){
             e.printStackTrace();
             Toast.makeText(context, "Unable to search barcode", Toast.LENGTH_SHORT);

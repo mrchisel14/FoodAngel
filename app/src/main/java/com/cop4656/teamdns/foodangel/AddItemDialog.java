@@ -101,12 +101,14 @@ public class AddItemDialog extends Dialog {
         //data object now contains all data needed to store in database.
         Log.d("Scanner", "Storing data: " + data.barcode + " " + data.name + " "
                 + data.expDate + " " + data.quantity);
+        DatabaseControl dbControl = new DatabaseControl(activity, "FA", null, 7);
+        dbControl.insertNewProduct(data.barcode, data.name, data.expDate, data.quantity);
     }
     //method below copied from http://stackoverflow.com/questions/6185966/converting-a-date-object-to-a-calendar-object
     public static int daysBetween(Date startDate, Date endDate) {
         long end = endDate.getTime();
         long start = startDate.getTime();
-        return (int) TimeUnit.MILLISECONDS.toDays(Math.abs(end - start));
+        return (int) TimeUnit.MILLISECONDS.toDays(Math.abs(end - start)) + 1;
     }
     private Util.ProductData retrieveData(final String bcode){
         //search for barcode in database if not found return object only containing barcode
@@ -121,9 +123,10 @@ public class AddItemDialog extends Dialog {
         }
         if(found){
             Log.d("Scanner", "Found in Embedded Database");
-            //int daysTillExpiration = AddItemDialog.daysBetween(rdata.entryDate, rdata.expDate);
+            Log.d("Scanner", "Database exp milli: " + rdata.expDate.getTime());
+            int daysTillExpiration = AddItemDialog.daysBetween(rdata.entryDate, rdata.expDate);
             Calendar c = Calendar.getInstance();//used to calculate today's expDate + last expiration time
-            //c.add(Calendar.DATE, daysTillExpiration);
+            c.add(Calendar.DATE, daysTillExpiration);
             rdata.expDate = c.getTime();
         }
         //Search online database

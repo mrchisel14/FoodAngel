@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +23,7 @@ public class DatePickerFragment extends DialogFragment
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+        Log.d("Scanner", "onCreateDialog()");
         final Calendar c = Calendar.getInstance();
         int year, month, day;
         if(d.data.expDate != null){ // Use the current expDate as the default expDate in the picker
@@ -36,17 +38,20 @@ public class DatePickerFragment extends DialogFragment
 
     public void onDateSet(DatePicker view, int year, int month, int day) {
         // Do something with the expDate chosen by the user
-        month += 1;
+        Log.d("Scanner", "onDateSet");
         Calendar c = Calendar.getInstance();
         c.set(year, month, day);
         if(c.compareTo(Calendar.getInstance()) == -1){//c is before today's date
             Toast.makeText(getActivity(), "Cannot set expiration date to the past", Toast.LENGTH_SHORT).show();
             c = Calendar.getInstance();
         }
+        else{
+            Log.d("Scanner", "Valid Date");
+        }
         d.data.expDate = c.getTime();
         if(textId != 0){
             TextView tv = (TextView) d.findViewById(textId);
-            tv.setText(c.get(Calendar.MONTH) + "/" + c.get(Calendar.DAY_OF_MONTH) + "/" + +c.get(Calendar.YEAR));
+            tv.setText((c.get(Calendar.MONTH)+1) + "/" + c.get(Calendar.DAY_OF_MONTH) + "/" + +c.get(Calendar.YEAR));
         }
         dismiss();
     }
