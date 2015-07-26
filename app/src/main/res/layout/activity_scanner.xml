@@ -3,13 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <!--<SurfaceView android:id="@+id/preview_view"
+    <SurfaceView android:id="@+id/preview_view"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"/>
     <com.google.zxing.client.android.ViewfinderView
         android:id="@+id/viewfinder_view"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"/>-->
+        android:layout_height="fill_parent"/>
 
     <TextView android:id="@+id/status_view"
         android:layout_width="wrap_content"
