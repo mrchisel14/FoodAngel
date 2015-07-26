@@ -23,6 +23,7 @@
             android:label="@string/app_name"
             android:parentActivityName="com.cop4656.teamdns.foodangel.ScannerActivity" >
         </activity>
+        <receiver android:name=".AlertReceiver"/>
     </application>
 
 </manifest>
