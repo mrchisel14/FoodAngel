@@ -1,0 +1,89 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch sstone
+# Your branch is up-to-date with 'origin/sstone'.
+#
+# Changes to be committed:
+#	modified:   .idea/compiler.xml
+#	modified:   .idea/vcs.xml
+#	modified:   app/.gitignore
+#	modified:   app/app.iml
+#	modified:   app/src/main/AndroidManifest.xml
+#	modified:   app/src/main/java/com/cop4656/teamdns/foodangel/AddItemDialog.java
+#	modified:   app/src/main/java/com/cop4656/teamdns/foodangel/DatabaseControl.java
+#	modified:   app/src/main/java/com/cop4656/teamdns/foodangel/DatePickerFragment.java
+#	modified:   app/src/main/java/com/cop4656/teamdns/foodangel/PantryActivity.java
+#	modified:   app/src/main/java/com/cop4656/teamdns/foodangel/PantryItemFragment.java
+#	new file:   build/intermediates/dex-cache/cache.xml
+#	new file:   build/intermediates/gradle_project_sync_data.bin
+#
+# Changes not staged for commit:
+#	modified:   libraries/Zxing/Zxing.iml
+#	modified:   libraries/Zxing/build/intermediates/bundles/debug/classes.jar
+#	modified:   libraries/Zxing/build/intermediates/bundles/release/classes.jar
+#	deleted:    libraries/Zxing/build/intermediates/incremental/mergeResourcesandroidTest/debug/merger.xml
+#	deleted:    libraries/Zxing/build/intermediates/incremental/packageResourcesdebug/merger.xml
+#	deleted:    libraries/Zxing/build/intermediates/incremental/packageResourcesrelease/merger.xml
+#	deleted:    libraries/Zxing/build/intermediates/manifest/androidTest/debug/AndroidManifest.xml
+#	deleted:    libraries/Zxing/build/intermediates/manifest/tmp/manifestMerger6984709878961585317.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/drawable-hdpi/launcher_icon.png
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi/launcher_icon.png
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi/launcher_icon.png
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/drawable/launcher_icon.png
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/drawable/share_via_barcode.png
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/layout-land/encode.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/layout-land/share.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/layout-ldpi/capture.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/layout/app_picker_list_item.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/layout/bookmark_picker_list_item.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/layout/capture.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/layout/encode.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/layout/help.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/layout/history_list_item.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/layout/search_book_contents.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/layout/search_book_contents_header.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/layout/search_book_contents_list_item.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/layout/share.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/menu/capture.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/menu/encode.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/menu/history.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/raw/beep.ogg
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-ar/values-ar.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-bg/values-bg.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-ca/values-ca.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-cs/values-cs.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-da/values-da.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-de/values-de.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-el/values-el.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-es/values-es.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-eu/values-eu.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-fi/values-fi.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-fr/values-fr.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-he/values-he.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-hi/values-hi.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-hu/values-hu.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-id/values-id.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-it/values-it.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-ja/values-ja.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-ko/values-ko.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-nl/values-nl.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-pl/values-pl.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-pt/values-pt.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-ro/values-ro.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-ru/values-ru.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-sk/values-sk.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-sl/values-sl.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-sv/values-sv.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-th/values-th.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-tr/values-tr.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-uk/values-uk.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-zh-rCN/values-zh-rCN.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values-zh-rTW/values-zh-rTW.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/values/values.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/merged/androidTest/debug/xml/preferences.xml
+#	deleted:    libraries/Zxing/build/intermediates/res/resources-debug-androidTest.ap_
+#	modified:   libraries/Zxing/build/outputs/aar/Zxing-debug.aar
+#	modified:   libraries/Zxing/build/outputs/aar/Zxing-release.aar
+#
+
