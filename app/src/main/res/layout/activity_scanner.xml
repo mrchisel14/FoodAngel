@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <SurfaceView android:id="@+id/preview_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"/>
+    <com.google.zxing.client.android.ViewfinderView
+        android:id="@+id/viewfinder_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"/>
+
+    <TextView android:id="@+id/status_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/transparent"
+        android:text="@string/msg_default_status"
+        android:textColor="@color/status_text"/>
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="75dp"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/logo_text"
+        android:scaleType="fitCenter"
+        android:layout_centerHorizontal="true"/>
+    <RelativeLayout
+        android:id="@+id/main_menu_wrapper"
+        android:layout_marginTop="5dp"
+        android:layout_width="100dp"
+        android:layout_height="match_parent">
+        <ImageButton android:id="@+id/Pantry_Button"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/pantry_door"
+            android:layout_alignParentTop="true"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:onClick="SwitchActivity"/>
+    </RelativeLayout>
+<TextView
+    android:id="@+id/beta"
+    android:padding="5dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="#ffffff"
+    android:textSize="20dp"
+    android:text="Beta"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentBottom="true"/>
+</RelativeLayout>
