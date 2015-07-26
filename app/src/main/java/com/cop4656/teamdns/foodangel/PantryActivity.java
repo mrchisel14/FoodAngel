@@ -3,10 +3,15 @@ package com.cop4656.teamdns.foodangel;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Scanner;
 
 public class PantryActivity extends Activity {
 
@@ -19,13 +24,13 @@ public class PantryActivity extends Activity {
 
         dbControl = new DatabaseControl(this, "FA", null, 7);
 
-        //dbControl.insertNewProduct("0000000", "Test Food", new Date(2015, 5, 17), 1);
-        // dbControl.insertNewProduct("0000000", "Test Food", new Date(2015, 5, 17), 1);
-        // dbControl.insertNewProduct("0000000", "Test Food", new Date(2015, 5, 17), 1);
-        // dbControl.insertNewProduct("0000000", "Test Food", new Date(2015, 5, 17), 1);
-        // dbControl.insertNewProduct("0000000", "Test Food", new Date(2015, 5, 17), 1);
-        // dbControl.insertNewProduct("0000000", "Test Food", new Date(2015, 5, 17), 1);
-        // dbControl.insertNewProduct("0000000", "Test Food", new Date(2015, 5, 17), 1);
+        dbControl.insertNewProduct("0000000", "Test Food", new Date(), 1);
+        dbControl.insertNewProduct("0000000", "Test Food", new Date(), 1);
+        dbControl.insertNewProduct("0000000", "Test Food", new Date(), 1);
+        dbControl.insertNewProduct("0000000", "Test Food", new Date(), 1);
+        dbControl.insertNewProduct("0000000", "Test Food", new Date(), 1);
+        dbControl.insertNewProduct("0000000", "Test Food", new Date(), 1);
+        dbControl.insertNewProduct("0000000", "Test Food", new Date(), 1);
 
         Cursor c = dbControl.selectProducts();
 
@@ -43,14 +48,21 @@ public class PantryActivity extends Activity {
                 // Grab the necessary fields from this row
                 Calendar cal = Calendar.getInstance();
                 cal.setTimeInMillis(c.getLong(3));
-                //Date date = new Date();
-                pantry.setFields(c.getString(2), cal, c.getInt(4));
+                pantry.setFields(c.getInt(0), c.getString(2), cal, c.getInt(4));
             } while (c.moveToNext());
         } else {
-            // No items in pantry, display message
+            findViewById(R.id.noItemsMessage).setVisibility(View.VISIBLE);
         }
 
         c.close();
         dbControl.close();
+
+        this.findViewById(R.id.returnButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), ScannerActivity.class);
+                startActivity(i);
+            }
+        });
     }
 }

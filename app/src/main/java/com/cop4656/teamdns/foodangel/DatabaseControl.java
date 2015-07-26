@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
+import java.util.Calendar;
 import java.util.Date;
 
 public class DatabaseControl extends SQLiteOpenHelper {
@@ -29,19 +30,28 @@ public class DatabaseControl extends SQLiteOpenHelper {
                 "ExpirationDate INTEGER, " +
                 "Quantity INTEGER, " +
                 "InsertDate INTEGER);");
-
-        db.execSQL("CREATE TABLE GCM (" +
-                "InstanceId TEXT);");
     }
 
     public void insertNewProduct(String barcode, String food, Date expire, int quantity) {
+        if (food.contains("'")) {
+            food = food.replace("'", "\\'");
+        }
+
         _writeDb.execSQL("INSERT INTO FoodAngel(Barcode, FoodItem, ExpirationDate, Quantity, InsertDate)" +
-                "VALUES('" + barcode + "', '" + food + "', " + expire.getTime() + ", " + quantity + ", " + (new Date()).getTime() + ");");
+                "VALUES('" + barcode + "', '" + food + "', " + expire.getDate() + ", " + quantity + ", " + (new Date()).getDate() + ");");
     }
 
     public Cursor selectProducts() {
-        return _readDb.rawQuery("SELECT * FROM FoodAngel;", null);
+        return _readDb.rawQuery("SELECT * FROM FoodAngel" +
+                " WHERE ExpirationDate > " + (new Date()).getDate() +
+                " ORDER BY ExpirationDate DESC;", null);
     }
+
+    public void deleteProduct(int i) {
+        _writeDb.execSQL("DELETE FROM FoodAngel " +
+                "WHERE Id = " + i + ";");
+    }
+
     public Util.ProductData retrieveProduct(String barcode){
         Util.ProductData data = null;
         if(barcode == null)return null;
@@ -66,16 +76,6 @@ public class DatabaseControl extends SQLiteOpenHelper {
         return data;
     }
 
-    public void insertInstanceId(String instanceId) {
-        _writeDb.execSQL("INSERT INTO GCM(InstanceId)" +
-                "VALUES('" + instanceId + "');");
-    }
-
-    public void deleteInstanceId(String instanceId) {
-        _writeDb.execSQL("DELETE FROM GCM" +
-                "WHERE InstanceId = '" + instanceId + "';");
-    }
-
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL("DROP TABLE FoodAngel;");
@@ -87,10 +87,5 @@ public class DatabaseControl extends SQLiteOpenHelper {
                 "ExpirationDate INTEGER, " +
                 "Quantity INTEGER, " +
                 "InsertDate INTEGER);");
-
-        db.execSQL("DROP TABLE GCM;");
-
-        db.execSQL("CREATE TABLE GCM (" +
-                "InstanceId TEXT);");
     }
 }

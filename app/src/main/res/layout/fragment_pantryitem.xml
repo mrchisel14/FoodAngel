@@ -3,9 +3,22 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="100dp"
+    android:layout_marginTop="3dp"
+    android:layout_marginLeft="3dp"
+    android:layout_marginRight="3dp"
     android:layout_marginBottom="3dp"
     android:weightSum="1"
-    android:background="#858585">
+    android:background="@drawable/pantryitem_bg">
+
+    <Button
+        android:layout_width="39dp"
+        android:layout_height="35dp"
+        android:text="X"
+        android:id="@+id/button"
+        android:textColor="#FF8080"
+        android:textSize="30sp"
+        android:background="@android:color/transparent"
+        android:layout_gravity="right|top" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -15,16 +28,6 @@
         android:textColor="#DCDCDC"
         android:textSize="25sp"
         android:gravity="right" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="X"
-        android:id="@+id/button"
-        android:textColor="#7A1F00"
-        android:textSize="30sp"
-        android:background="@android:color/transparent"
-        android:layout_gravity="right|top" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -44,5 +47,11 @@
         android:textSize="25sp"
         android:gravity="right"
         android:layout_gravity="left|bottom" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/id"
+        android:visibility="invisible"/>
 
 </FrameLayout>

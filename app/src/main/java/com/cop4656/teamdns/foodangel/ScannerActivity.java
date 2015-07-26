@@ -1,5 +1,6 @@
 package com.cop4656.teamdns.foodangel;
 
+import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -22,6 +23,7 @@ public class ScannerActivity extends CaptureActivity {
         setContentView(R.layout.activity_scanner);
         fm = getFragmentManager();
     }
+
     @Override
     public void handleDecodeInternally(Result rawResult, ResultHandler resultHandler, Bitmap barcode) {
         //This is what happens after an item is scanned successfully
@@ -31,6 +33,7 @@ public class ScannerActivity extends CaptureActivity {
         d.setTitle(getResources().getString(R.string.add_item_title));
         d.show();
     }
+
     public void SwitchActivity(View view) {
         Intent i = new Intent(this, PantryActivity.class);
         startActivity(i);
