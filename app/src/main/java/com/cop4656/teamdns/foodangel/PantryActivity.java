@@ -24,13 +24,22 @@ public class PantryActivity extends Activity {
 
         dbControl = new DatabaseControl(this, "FA", null, 7);
 
-        dbControl.insertNewProduct("0000000", "Test Food", new Date(), 1);
-        dbControl.insertNewProduct("0000000", "Test Food", new Date(), 1);
-        dbControl.insertNewProduct("0000000", "Test Food", new Date(), 1);
-        dbControl.insertNewProduct("0000000", "Test Food", new Date(), 1);
-        dbControl.insertNewProduct("0000000", "Test Food", new Date(), 1);
-        dbControl.insertNewProduct("0000000", "Test Food", new Date(), 1);
-        dbControl.insertNewProduct("0000000", "Test Food", new Date(), 1);
+        // dbControl.insertNewProduct("0000000", "Test Food", new Date(2015 - 1900, 8 - 1, 17), 1);
+        // dbControl.insertNewProduct("0000000", "Test Food", new Date(2015 - 1900, 8 - 1, 17), 1);
+        // dbControl.insertNewProduct("0000000", "Test Food", new Date(2015 - 1900, 8 - 1, 17), 1);
+        // dbControl.insertNewProduct("0000000", "Test Food", new Date(2015 - 1900, 8 - 1, 17), 1);
+        // dbControl.insertNewProduct("0000000", "Test Food", new Date(2015 - 1900, 8 - 1, 17), 1);
+        // dbControl.insertNewProduct("0000000", "Test Food", new Date(2015 - 1900, 8 - 1, 17), 1);
+        // dbControl.insertNewProduct("0000000", "Test Food", new Date(2015 - 1900, 8 - 1, 17), 1);
+        // dbControl.insertNewProduct("0000000", "Test Food", new Date(2015 - 1900, 8 - 1, 17), 1);
+        // dbControl.insertNewProduct("0000000", "Test Food", new Date(2015 - 1900, 8 - 1, 17), 1);
+        // dbControl.insertNewProduct("0000000", "Test Food", new Date(2015 - 1900, 8 - 1, 17), 1);
+        // dbControl.insertNewProduct("0000000", "Test Food", new Date(2015 - 1900, 8 - 1, 17), 1);
+        // dbControl.insertNewProduct("0000000", "Test Food", new Date(2015 - 1900, 8 - 1, 17), 1);
+        // dbControl.insertNewProduct("0000000", "Test Food", new Date(2015 - 1900, 8 - 1, 17), 1);
+        // dbControl.insertNewProduct("0000000", "Test Food", new Date(2015 - 1900, 8 - 1, 17), 1);
+        // dbControl.insertNewProduct("0000000", "Test Food", new Date(2015 - 1900, 8 - 1, 17), 1);
+        // dbControl.insertNewProduct("0000000", "Test Food", new Date(2015 - 1900, 8 - 1, 17), 1);
 
         Cursor c = dbControl.selectProducts();
 

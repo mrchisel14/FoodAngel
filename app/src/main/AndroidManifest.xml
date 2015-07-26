@@ -25,6 +25,7 @@
         </activity>
         <activity
             android:name=".PantryActivity"
+            android:screenOrientation="portrait"
             android:label="@string/app_name"
             android:parentActivityName="com.cop4656.teamdns.foodangel.ScannerActivity" >
         </activity>

@@ -38,12 +38,12 @@ public class DatabaseControl extends SQLiteOpenHelper {
         }
 
         _writeDb.execSQL("INSERT INTO FoodAngel(Barcode, FoodItem, ExpirationDate, Quantity, InsertDate)" +
-                "VALUES('" + barcode + "', '" + food + "', " + expire.getDate() + ", " + quantity + ", " + (new Date()).getDate() + ");");
+                "VALUES('" + barcode + "', '" + food + "', " + expire.getTime() + ", " + quantity + ", " + (new Date()).getTime() + ");");
     }
 
     public Cursor selectProducts() {
         return _readDb.rawQuery("SELECT * FROM FoodAngel" +
-                " WHERE ExpirationDate > " + (new Date()).getDate() +
+                " WHERE ExpirationDate > " + (new Date()).getTime() +
                 " ORDER BY ExpirationDate DESC;", null);
     }
 

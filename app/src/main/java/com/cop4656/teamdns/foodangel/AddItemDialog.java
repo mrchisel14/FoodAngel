@@ -1,10 +1,7 @@
 package com.cop4656.teamdns.foodangel;
 
-import android.app.AlarmManager;
 import android.app.Dialog;
-import android.app.PendingIntent;
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -80,7 +77,7 @@ public class AddItemDialog extends Dialog {
     }
     @Override
     protected void onStop(){
-        activity.restartPreviewAfterDelay(0L);
+        // activity.restartPreviewAfterDelay(0L);
         super.onStop();
     }
     private void showDateDialog(){
@@ -92,21 +89,14 @@ public class AddItemDialog extends Dialog {
     private void storeData(String barcode, String name, String quantity){
         //store data to database
         Date selectedDate;
-        if(data.expDate != null) {//get expDate if was found in database
+        if(data.expDate != null)//get expDate if was found in database
             selectedDate = data.expDate;
-
-            setAlarm(selectedDate);
-        }
         else selectedDate = new Date();
 
         //store form data in data
         data.barcode = barcode;
         data.name = name;
-        if(data.expDate == null) {
-            data.expDate = selectedDate;
-
-            setAlarm(selectedDate);
-        }
+        if(data.expDate == null) data.expDate = selectedDate;
         data.quantity = Integer.parseInt(quantity);
         //data object now contains all data needed to store in database.
         Log.d("Scanner", "Storing data: " + data.barcode + " " + data.name + " "
@@ -176,14 +166,5 @@ public class AddItemDialog extends Dialog {
         found = false;
         Log.d("Scanner", "Leaving Retrieve Data");
         return rdata;
-    }
-
-    private void setAlarm(Date selectedDate) {
-        Date expDateAlarm = new Date(selectedDate.getYear() - 1900, selectedDate.getMonth() + 1, selectedDate.getDay() - 1, 15, 25);
-        Intent alertIntent = new Intent(getContext(), AlertReceiver.class);
-
-        AlarmManager alarmManager = (AlarmManager)getContext().getSystemService(Context.ALARM_SERVICE);
-
-        alarmManager.set(AlarmManager.RTC_WAKEUP, expDateAlarm.getTime(), PendingIntent.getBroadcast(getContext(), 1, alertIntent, PendingIntent.FLAG_UPDATE_CURRENT));
     }
 }

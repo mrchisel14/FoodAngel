@@ -40,7 +40,7 @@ public class DatePickerFragment extends DialogFragment
         // Do something with the expDate chosen by the user
         Log.d("Scanner", "onDateSet");
         Calendar c = Calendar.getInstance();
-        c.set(year, month, day);
+        c.set(year + 1900, month, day);
         if(c.compareTo(Calendar.getInstance()) == -1){//c is before today's date
             Toast.makeText(getActivity(), "Cannot set expiration date to the past", Toast.LENGTH_SHORT).show();
             c = Calendar.getInstance();
