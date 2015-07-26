@@ -16,7 +16,7 @@ public class AlertReceiver extends BroadcastReceiver {
     // Called when a broadcast is made targeting this class
     @Override
     public void onReceive(Context context, Intent intent) {
-        createNotification(context, "Food Angel", "", "Something in your Pantry is about to expire!");
+        createNotification(context, "Food Angel", "Check your pantry!", "Something is about to expire!");
     }
 
     public void createNotification(Context context, String msg, String msgText, String msgAlert){

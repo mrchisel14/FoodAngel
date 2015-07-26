@@ -3,6 +3,11 @@
     xmlns:tool="http://schemas.android.com/tools"
     package="com.cop4656.teamdns.foodangel">
 
+    <!-- Permission to use AlarmManager -->
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+    <!-- Permission to Send SMS -->
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+
     <application
         android:allowBackup="true"
         tool:replace="android:icon"
