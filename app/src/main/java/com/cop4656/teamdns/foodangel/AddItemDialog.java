@@ -77,7 +77,7 @@ public class AddItemDialog extends Dialog {
     }
     @Override
     protected void onStop(){
-        // activity.restartPreviewAfterDelay(0L);
+        activity.restartPreviewAfterDelay(0L);
         super.onStop();
     }
     private void showDateDialog(){

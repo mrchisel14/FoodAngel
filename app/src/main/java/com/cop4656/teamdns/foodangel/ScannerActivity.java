@@ -13,7 +13,7 @@ import com.google.zxing.client.android.CaptureActivity;
 import com.google.zxing.client.android.result.ResultHandler;
 
 
-public class ScannerActivity extends Activity /*CaptureActivity*/ {
+public class ScannerActivity extends CaptureActivity {
     static FragmentManager fm;
 
     @Override
@@ -24,7 +24,7 @@ public class ScannerActivity extends Activity /*CaptureActivity*/ {
         fm = getFragmentManager();
     }
 
-    /*@Override
+    @Override
     public void handleDecodeInternally(Result rawResult, ResultHandler resultHandler, Bitmap barcode) {
         //This is what happens after an item is scanned successfully
         Log.d("Scanner", "Results: " + rawResult.toString());
@@ -32,7 +32,7 @@ public class ScannerActivity extends Activity /*CaptureActivity*/ {
         AddItemDialog d = new AddItemDialog(this, this, rawResult.toString());
         d.setTitle(getResources().getString(R.string.add_item_title));
         d.show();
-    }*/
+    }
 
     public void SwitchActivity(View view) {
         Intent i = new Intent(this, PantryActivity.class);
